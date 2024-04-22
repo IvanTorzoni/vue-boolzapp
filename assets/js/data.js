@@ -178,7 +178,14 @@ createApp({
                 status: 'sent',
             });
             this.newMessage = ""
-        }
+            setTimeout(() => {
+                this.contacts[this.activeUser].messages.push({
+                    date: "16:14",
+                    message: "OK",
+                    status: 'recived',
+                });
+            },1000)
+        },
     }
 }).mount('#app')
 
