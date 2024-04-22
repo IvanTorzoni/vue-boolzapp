@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="message-time">16:13</span>
+                        <span class="message-time">{{ curMessage.date }}</span>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                 <div class="right-footer-icon">
                     <i class="far fa-smile"></i>
                 </div>
-                <input class="new-message-inputs" placeholder="Scrivi un messaggio">
+                <input class="new-message-inputs" placeholder="Scrivi un messaggio" v-model.trim="newMessage" @keyup.enter="sentMsg()">
                 <div class="right-footer-icon">
                     <i class="fa fa-microphone" aria-hidden="true"></i>
                 </div>

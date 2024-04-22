@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            newMessage: "",
             activeUser: 0,
             contacts: [
                 {
@@ -167,6 +168,16 @@ createApp({
                     ],
                 }
             ]
+        }
+    },
+    methods: {
+        sentMsg() {
+            this.contacts[this.activeUser].messages.push({
+                date: "16:14",
+                message: this.newMessage,
+                status: 'sent',
+            });
+            this.newMessage = ""
         }
     }
 }).mount('#app')
