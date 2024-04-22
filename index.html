@@ -42,10 +42,10 @@
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </label>
                 <input id="contacts-filter" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat"
-                    name="search">
+                    name="search" v-model="textContact" @keyup.enter="search">
             </div>
             <div class="contacts">
-                <div class="contact" v-for="(curContact, index) in contacts" @click="activeUser = index">
+                <div class="contact" v-for="(curContact, index) in contacts" @click="activeUser = index" v-show="curContact.visible">
                     <div class="contact-logo">
                         <img :src="'assets/img/avatar' + curContact.avatar +'.jpg'" alt="">
                     </div>

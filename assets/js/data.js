@@ -186,6 +186,16 @@ createApp({
                 });
             },1000)
         },
+        search: function(){
+            this.contacts.forEach((curContact) => {
+              const name = curContact.name.toLowerCase();
+              if (name.includes(this.textContact.toLowerCase())) {
+                curContact.visible = true;
+              } else {
+                curContact.visible = false;
+              }
+            });
+    },
     }
 }).mount('#app')
 
